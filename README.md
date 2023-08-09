@@ -1,5 +1,7 @@
 # study-git-commands
 
+Esse repositório tem o objetivo de listar os principais comandos e boas práticas na utilização do git.
+
 ## Principais comandos
 
 | Comando                                 | Resultado                                                                                                                                                                                                                                                 |
@@ -35,3 +37,65 @@
 | git tag **nome_tag**                    | Cria uma nova tag no commit atual com o nome especificado.                                                                                                                                                                                                |
 | git tag -a **nome_tag** -m **mensagem** | Cria uma nova tag anotada com uma mensagem detalhada.                                                                                                                                                                                                     |
 | git push --tags                         | Envia todas as tags locais para o repositório remoto.                                                                                                                                                                                                     |
+
+## Conventional Commits
+
+Commits convencionais referem-se a uma prática de criar mensagens de commit de forma padronizada e descritiva, seguindo um formato predefinido. Essa abordagem ajuda a comunicar claramente as mudanças feitas em um commit, o que é especialmente útil em projetos de desenvolvimento de software colaborativo, onde várias pessoas trabalham juntas. A Convenção de Mensagens de Commit (Commit Message Convention) mais comumente usada é conhecida como "Conventional Commits".
+
+A estrutura básica de um commit convencional segue este padrão:
+
+A estrutura básica de um commit convencional segue este padrão:
+
+```
+tipo(escopo): descrição
+
+Corpo da mensagem
+
+Rodapé da mensagem
+```
+
+#### Cada parte acima se refere a:
+
+- **Tipo**: Indica o propósito geral do commit. Pode ser algo como "feat" (adição de uma nova funcionalidade), "fix" (correção de um bug), "chore" (tarefa de manutenção ou ajuste), "docs" (atualização de documentação), etc.
+
+- **Escopo** (opcional): Refere-se a uma parte específica do projeto que está sendo afetada pelo commit. Isso pode ser um nome de módulo, um componente ou qualquer outra divisão lógica do código.
+
+- **Descrição**: Fornece uma breve descrição do que o commit faz. Deve ser curta e clara, explicando o que foi alterado.
+
+- **Corpo da mensagem** (opcional): Permite fornecer informações mais detalhadas sobre as mudanças feitas no commit. Isso pode incluir a motivação por trás das alterações, detalhes técnicos ou qualquer contexto necessário.
+
+- **Rodapé da mensagem** (opcional): Usado para fazer referência a problemas (como números de problemas ou solicitações de pull) ou para adicionar informações adicionais relevantes.
+
+#### Exemplo
+
+```
+feat(user-register): adiciona cadastro de usuário
+
+Adiciona campos para o cadastro de usuários do sistema: Nome, email, senha e data de nascimento.
+Isso permite o cadastro de novos usuários e também possibilita o login no sistema com as informações de email e senha.
+
+Closes #453
+```
+
+#### O mais comum é a utilização resumida para atividades simples
+
+```
+feat(user-register): adiciona cadastro de usuário
+```
+
+### Lista dos **tipos** mais utilizados
+
+| Tipo     | Significado                                                                                                                             |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| feat     | Adição de uma nova funcionalidade ao código ou ao projeto.                                                                              |
+| fix      | Correção de um bug ou problema existente no código.                                                                                     |
+| chore    | Tarefas de manutenção, ajustes no código, melhorias na estrutura, refatorações, etc. Geralmente não afetam a funcionalidade principal.  |
+| docs     | Atualizações na documentação, como comentários no código, guias, manuais, etc.                                                          |
+| style    | Mudanças relacionadas à formatação do código, como espaçamento, indentação, ponto e vírgula, etc.                                       |
+| refactor | Mudanças no código que não adicionam uma nova funcionalidade nem corrigem um bug, mas melhoram a estrutura, legibilidade ou desempenho. |
+| test     | Adição ou modificação de testes de código existentes.                                                                                   |
+| build    | Mudanças no processo de compilação, configuração, dependências, scripts de construção, etc.                                             |
+| revert   | Reverte um commit anterior.                                                                                                             |
+| ci       | Mudanças relacionadas à configuração de integração contínua (CI) ou automação de implantação.                                           |
+| wip      | rabalho em progresso. Geralmente usado para commits intermediários que ainda não estão prontos para serem finalizados.                  |
+| merge    | Usado para comunicar uma mesclagem de branches                                                                                          |

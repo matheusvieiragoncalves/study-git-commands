@@ -44,8 +44,6 @@ Commits convencionais referem-se a uma prática de criar mensagens de commit de 
 
 A estrutura básica de um commit convencional segue este padrão:
 
-A estrutura básica de um commit convencional segue este padrão:
-
 ```
 tipo(escopo): descrição
 
